@@ -1,27 +1,19 @@
 // Grab elements
 // var textarea = $(".container").children().eq(1)
+// var nineEl = $("#nine-am")
 
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do, YYYY"))
 console.log(today)
 
-var currentTime = today.format("h:mm a")
-console.log(currentTime)
+var currentTime = today.format("h A")
+console.log("current time is: " + currentTime)
 
-function whatTime(){
-    if (formNine = currentTime) {
-        $("#nine-am").textarea.classList.add(".present")
-    } if (formNine < currentTime) {
-        $("#nine-am").textarea.classList.add(".past")
-    } if (formNine > currentTime) {
-        $("#nine-am").textarea.classList.add(".future")
-    }
-}
 
 // AM's
 var nineAM = moment(today).set("hour", 9).set("minute", 00).set("second", 00);
 var formNine = nineAM.format("h A")
-console.log(formNine) 
+console.log("nine AM " + formNine) 
 $("#nine-am").text(formNine)
 
 var tenAM = moment(today).set("hour", 10).set("minute", 00).set("second", 00);
@@ -64,10 +56,33 @@ var formFive = fivePM.add(12, "h").format("h A");
 console.log(formFive)
 $("#five-pm").text(formFive)
 
-//Manipulate tenAM Date+1
-var exampleAM = new Date("Sun May-29-2022, 9:00 AM") //may not work because date is hard coded 
-var nineTime = moment(exampleAM).format("h A") // so it will be in past tense 
-console.log(nineTime)
-// $("#nine-am").text(nineTime)// AM/PM works
 
+// how long has it been?
+var howLong = nineAM.from(today)
+console.log(today.format("dddd, MMMM Do, YYYY, h A"))
+console.log("it's been " + howLong)
+
+console.log(tenAM.fromNow())
+
+// diff
+var before = nineAM.diff(today, "hours")
+console.log(before) // happened earlier
+
+// var now = nineAM.diff(today, "hours")
+// console.log(now)
+
+var after = today.diff(nineAM, "hours")
+console.log(after) // the next day
+
+// Loop thru all times 
+
+
+// if 
+if (before > 0) { // present
+    $("textarea").attr("style","background-color: #ff6961")
+} if (after < 0){ // future
+    $("textarea").attr("style","background-color: #77dd77")
+} if (today === after){ // past
+    $("textarea").attr("style","background-color: #d3d3d3")
+}
 
