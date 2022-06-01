@@ -6,15 +6,18 @@ var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do, YYYY"))
 console.log(today)
 
-var currentTime = today.format("h A")
+var currentTime = JSON.parse(today.format("H"))
 console.log("current time is: " + currentTime)
+
+
 
 
 // AM's
 var nineAM = moment(today).set("hour", 9).set("minute", 00).set("second", 00);
 var formNine = nineAM.format("h A")
 console.log("nine AM " + formNine) 
-$("#nine-am").text(formNine)
+// var nineEx = $("#9").attr("id")
+// var nineSib = $("#9").siblings("textarea")
 
 var tenAM = moment(today).set("hour", 10).set("minute", 00).set("second", 00);
 var formTen = tenAM.format("h A")
@@ -57,6 +60,9 @@ console.log(formFive)
 $("#five-pm").text(formFive)
 
 
+
+
+
 // how long has it been?
 var howLong = nineAM.from(today)
 console.log(today.format("dddd, MMMM Do, YYYY, h A"))
@@ -65,24 +71,33 @@ console.log("it's been " + howLong)
 console.log(tenAM.fromNow())
 
 // diff
-var before = nineAM.diff(today, "hours")
-console.log(before) // happened earlier
+var before9 = nineAM.diff(today, "hours")
+console.log(before9) // happened earlier
 
-// var now = nineAM.diff(today, "hours")
+// var now = nineAM.diff(today, "hours", true)
 // console.log(now)
 
-var after = today.diff(nineAM, "hours")
-console.log(after) // the next day
+var after9 = today.diff(nineAM, "hours")
+console.log(after9) // the next day
 
+debugger
 // Loop thru all times 
+for (let i = 9; i < 18; i++) {
+    var nextTime = JSON.parse($(`#${i}`).attr("id")) 
 
+    var nextSib = $("#" + i).siblings("textarea")
 
-// if 
-if (before > 0) { // present
-    $("textarea").attr("style","background-color: #ff6961")
-} if (after < 0){ // future
-    $("textarea").attr("style","background-color: #77dd77")
-} if (today === after){ // past
-    $("textarea").attr("style","background-color: #d3d3d3")
+    // if 
+    if (nextTime == currentTime) { // present 
+        nextSib.attr("style","background-color: #ff6961")
+    } if (nextTime < currentTime){ // past 
+        nextSib.attr("style","background-color: #d3d3d3")
+    } if (nextTime > currentTime){ // future 
+        nextSib.attr("style","background-color: #77dd77")
+    };
+    
 }
 
+
+// Local Storage User Input => saveBtn textarea.val() 
+// $("textarea").localStorage.setItem
