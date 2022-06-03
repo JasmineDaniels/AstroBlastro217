@@ -79,9 +79,3 @@ textarea{
   border: 1px solid rgb(156, 154, 154);
 }
 
-legend {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

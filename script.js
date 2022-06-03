@@ -2,7 +2,7 @@
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do, YYYY"))
 console.log(today)
-//current time formatted into Hours and turned into an integer
+//current time formatted into Hours and turned into Military time (an integer)
 var currentTime = JSON.parse(today.format("H"))
 console.log("current time is: " + currentTime)
 
@@ -24,25 +24,6 @@ for (let i = 9; i < 18; i++) {
 }
 
 // Local Storage User Input => saveBtn textarea.val() 
-// var output = $("#lsOutput")
-
-// $(".saveBtn").click(function(){
-//     var value = $(this).siblings(".textArea").val();
-//     var key = $(this).attr("id");
-//     var list = $(this).localStorage.getItem("key")
-//     var output = $("#text-9")
-
-//     if (key && value){
-//         localStorage.setItem(key, value);
-//         console.log(localStorage)
-//     }
-
-
-
-// });
-
-// $("text-9").append(localStorage.getItem("key"))
-
 
 $(".saveBtn").click(function(){
     var value = $(this).siblings(".textArea").val();
@@ -57,5 +38,6 @@ $(".saveBtn").click(function(){
     output.append("<li>" +localStorage.getItem("key") + "</li>")
 });
 
+// $("text-9").append(localStorage.getItem("key"))
 
 
