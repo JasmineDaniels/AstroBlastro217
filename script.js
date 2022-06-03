@@ -24,17 +24,38 @@ for (let i = 9; i < 18; i++) {
 }
 
 // Local Storage User Input => saveBtn textarea.val() 
+// var output = $("#lsOutput")
+
+// $(".saveBtn").click(function(){
+//     var value = $(this).siblings(".textArea").val();
+//     var key = $(this).attr("id");
+//     var list = $(this).localStorage.getItem("key")
+//     var output = $("#text-9")
+
+//     if (key && value){
+//         localStorage.setItem(key, value);
+//         console.log(localStorage)
+//     }
+
+
+
+// });
+
+// $("text-9").append(localStorage.getItem("key"))
 
 
 $(".saveBtn").click(function(){
-    console.log("I was clicked")
     var value = $(this).siblings(".textArea").val();
-    console.log(value)
-
     var key = $(this).attr("id");
-    console.log(key)
-    localStorage.setItem(key, value)
+    var output = $(this).siblings("textArea")
 
+    if (key && value){
+        localStorage.setItem(key, value);
+        console.log(localStorage)
+    }
+
+    output.append("<li>" +localStorage.getItem("key") + "</li>")
 });
 
-$("#text-9").append(localStorage.getItem("value"));
+
+
