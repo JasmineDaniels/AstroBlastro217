@@ -2,7 +2,7 @@
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do, YYYY"))
 console.log(today)
-//current time formatted into Hours and turned into Military time (an integer)
+//current time formatted into Hours and parsed into an integer (Military time)
 var currentTime = JSON.parse(today.format("H"))
 console.log("current time is: " + currentTime)
 

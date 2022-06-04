@@ -1,5 +1,5 @@
 # Employee Daily Planner
-Organize your day with this easy to use daily planner!
+### Organize your day with this easy to use daily planner!
 
 
 ## Tasks Completed 
@@ -11,6 +11,6 @@ Organize your day with this easy to use daily planner!
 - Save your plans indefinitely by pressing the corresponding 'Save' button
 
 ### Check it Out!!
-#### [Employee Daily Planner](https://)
+#### [Employee Daily Planner Webpage](https://jasminedaniels.github.io/AstroBlastro217/)
 
 ![Empolyee Daily Planner](assets/AstroBlastro.png)
