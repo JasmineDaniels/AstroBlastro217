@@ -37,20 +37,6 @@ $(".saveBtn").click(function(){
 
 });
 
-// Refactor Code 
-// for (let i = 9; i < 18; i++) {
-//     // var for the id w/ the value of i 
-//     var nextKey = $(`#key-${i}`).attr("id") 
-//     // var for the textarea sibling of the id with the value of i  
-//     var nextValue = $("#" + i).siblings(".textarea").val();
-
-//     // if 
-//     if (localStorage.getItem(`#key-${i}`)){
-//         $("#text-9").append(localStorage.getItem(`#key-${i}`));
-//     } else {
-//         $("#text-9").append("Add Text");
-//     };
-// }
 
 if (localStorage.getItem("key-9")){
     $("#text-9").append(localStorage.getItem("key-9"));
